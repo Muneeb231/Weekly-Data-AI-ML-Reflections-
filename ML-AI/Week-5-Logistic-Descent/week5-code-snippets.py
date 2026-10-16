@@ -61,4 +61,11 @@ reg_cost = ((lambda_*reg_cost) / (2*m))
 
 
 
+
+reg term for gradient: particularly the d/dw gradient
+
+for j in range(n):
+    dj_dw[j] += (lambda_*w[j]) / m
+
+
 '''
