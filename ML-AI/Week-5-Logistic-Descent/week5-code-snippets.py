@@ -53,7 +53,11 @@ prediction function:
         p[i] = 1 if f_wb >= 0.5 else 0
 
 
+cost + regularization term:
+for j in range(n):
+    reg_cost += np.power(w[j],2)
 
+reg_cost = ((lambda_*reg_cost) / (2*m)) 
 
 
 
