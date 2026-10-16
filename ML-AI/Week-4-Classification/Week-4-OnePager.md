@@ -13,10 +13,10 @@ $$g(z) = \frac{1}{1 + e^{-z}}$$
   - $e$ is eulers number $e \approx 2.71828$ : 
     - base for natural log
 
-Logistic regression is just the function $f_{w,b}(x)$ inputted into z
+Logistic regression is just the function $f_{\mathbf{w},b}(\mathbf{x})$ inputted into z
  - this outputs the sigmoid around the descision barrier
 
-$$g(z) = z = w^\top x + b \implies g(z) = g(w^\top x + b) = \frac{1}{1 + e^{-(w^\top x + b)}}$$
+$$g(z) = z = \boldsymbol{w}^\top \mathbf{x} + b \implies g(\boldsymbol{w}^\top \mathbf{x} + b) = \frac{1}{1 + e^{-(\boldsymbol{w}^\top \mathbf{x} + b)}}$$
   where $\mathbf{w}$ and $\mathbf{x}$ are vectors
   - outputs between 0 and 1
     - this is the certainty of the prediction
@@ -34,18 +34,15 @@ ie boundary can be 0.5 then if y^ is above that then its one class and below the
 ## Cost funciton for Logistic Regression
 
 Logistic Loss function (piecewise):
-$$\text{cost}(f_{w,b}(x^{(i)}), y^{(i)}) = \begin{cases} -\log(f_{w,b}(x^{(i)})) & \text{if } y^{(i)} = 1 \\ -\log(1 - f_{w,b}(x^{(i)})) & \text{if } y^{(i)} = 0 \end{cases}$$
+
+$$\text{cost}(f_{\boldsymbol{w},b}(\mathbf{x}^{(i)}), y^{(i)}) = \begin{cases} -\log(f_{\boldsymbol{w},b}(\mathbf{x}^{(i)})) & \text{if } y^{(i)} = 1 \\ -\log(1 - f_{\boldsymbol{w},b}(\mathbf{x}^{(i)})) & \text{if } y^{(i)} = 0 \end{cases}$$
 
 
 loss is how well you are doing on a specific training ex and cost is how well you are doing on the whole thing
 
 
-
 Cost for Log Reg:
-$$J(w, b) = \frac{1}{m} \sum_{i=1}^{m} \text{cost}(f_{w,b}(x^{(i)}), y^{(i)})$$
+$$J(\boldsymbol{w}, b) = \frac{1}{m} \sum_{i=1}^{m} \text{cost}(f_{\boldsymbol{w},b}(\mathbf{x}^{(i)}), y^{(i)})$$
 
-
-can convert the single lin eto this for the logistic loss function: 
-  - $$\text{cost}(f_{w,b}(x^{(i)}), y^{(i)}) = -y^{(i)}\log(f_{w,b}(x^{(i)})) - (1 - y^{(i)})\log(1 - f_{w,b}(x^{(i)}))$$
 
 
