@@ -16,6 +16,23 @@ total_cost = total_cost /m
 
 
 
+gradient:
+for i in range(m):
+z_wb = 0
+for j in range(n): 
+    z_wb += w[j]*X[i][j]
+z_wb += b
+f_wb = 1 / (1+np.exp(-z_wb))
+
+dj_db_i = f_wb - y[i]
+dj_db += dj_db_i
+
+for j in range(n):
+    dj_dw[j] += (f_wb-y[i]) * X[i][j]
+    
+dj_dw = dj_dw/m
+dj_db = dj_db/m
+
 
 
 
