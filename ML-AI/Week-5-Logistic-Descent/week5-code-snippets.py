@@ -35,5 +35,26 @@ dj_db = dj_db/m
 
 
 
+prediction function:
+    for i in range(m):   
+        z_wb = 0
+        # Loop over each feature
+        for j in range(n): 
+            # Add the corresponding term to z_wb
+            z_wb += w[j] * X[i][j]
+        
+        # Add bias term 
+        z_wb += b
+        
+        # Calculate the prediction for this example
+        f_wb = sigmoid(z_wb)
+
+        # Apply the threshold
+        p[i] = 1 if f_wb >= 0.5 else 0
+
+
+
+
+
 
 '''
